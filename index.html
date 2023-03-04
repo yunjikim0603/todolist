@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ToDoList</title>
+    <link
+      href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-coding.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "NanumGoDigANiGoGoDing";
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2 id="clock">00:00:00</h2>
+
+      <form id="login-form" class="hidden">
+        <input
+          type="text"
+          placeholder="Write your name"
+          size="35"
+          maxlength="15"
+          required
+        />
+        <!-- <button>LOGIN</button> -->
+      </form>
+
+      <h1 id="greeting" class="hidden"></h1>
+      <span id="logout" class="hidden">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </span>
+
+      <div id="weather">
+        <span id="weather_city"></span>
+        <span id="weather_temp"></span>
+        <span id="weather_title"></span>
+      </div>
+      <div id="todo_section" class="hidden">
+        <div id="cal">
+          <span id="date"></span>
+          <div id="month-year">
+            <span id="month"></span>
+            <span id="year"></span>
+          </div>
+          <span id="day"></span>
+        </div>
+
+        <ul id="todo-list"></ul>
+
+        <form id="todo-form">
+          <input
+            type="text"
+            placeholder="Write ToDo and press enter"
+            size="52"
+            maxlength="35"
+            required
+          />
+        </form>
+      </div>
+    </div>
+    <script src="js/greeting.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/cal.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0cc9483145.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
