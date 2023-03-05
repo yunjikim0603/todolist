@@ -9,7 +9,7 @@ function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
-//todo 삭제 함수
+//todo 삭제함수
 function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
@@ -24,11 +24,9 @@ function paintToDo(newTodo) {
   //li 태그 생성하기
   const li = document.createElement("li");
   li.id = newTodo.id;
-  //   li.classList = "todo-row";
 
   //span 태그 생성하기
   const span = document.createElement("span");
-  //   span.classList = "todo-row_checkboxAndlabel";
 
   //i 태그 생성하기
   const button = document.createElement("i");
@@ -47,28 +45,17 @@ function paintToDo(newTodo) {
   const label = document.createElement("label");
   label.htmlFor = `cb${newTodo.id}`;
 
-  //   input.id = `c${newTodo.id}`;
-  //   input.classList = "todo_row_checkbox";
-  //   input.value = newTodo.id;
-
-  //label 태그 생성하기
-  //   const label = document.createElement("label");
-  //   label.htmlFor = `c${newTodo.id}`;
-  //   label.textContent = newTodo.text;
-
   //li안에 span,button,checkbox,label 태그 넣기
   li.appendChild(checkbox);
-
   li.appendChild(label);
   li.appendChild(span);
   li.appendChild(button);
-
   span.innerText = newTodo.text;
 
   //todoList 안에 li태그 넣기
   toDoList.appendChild(li);
 
-  //checkbox change 이벤트
+  //checkbox change 취소선 이벤트
   checkbox.addEventListener("change", (event) => {
     if (event.currentTarget.checked) {
       span.style.textDecoration = "line-through";
@@ -82,6 +69,7 @@ function paintToDo(newTodo) {
 
 //버튼 클릭 함수
 function handleToDoSubmit(event) {
+  //todo 등록갯수 11개 제한
   if (toDos.length > 10) {
     //기본동작 막기
     event.preventDefault();
@@ -97,7 +85,7 @@ function handleToDoSubmit(event) {
     //입력칸 비우기
     toDoInput.value = "";
 
-    //newTodoObj 생성 (text, id)
+    //newTodoObj 생성 (text, id, checked)
     const newTodoObj = {
       text: newTodo,
       id: Date.now(),
